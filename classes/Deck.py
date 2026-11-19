@@ -22,8 +22,11 @@ class Deck():
             self.card_list[card_index_1], self.card_list[card_index_2] = self.card_list[card_index_2], self.card_list[card_index_1]
         return self
 
-        
-    
+    def thousand_shuffle(self)->Self:
+        for i in range(0,1000):
+            self.shuffle_deck()
+        return self
+
         
 
     

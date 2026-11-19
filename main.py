@@ -3,10 +3,10 @@ from classes.Deck import Deck
 
 new_deck = Deck()
 
-new_deck.shuffle_deck()
+new_deck.thousand_shuffle()
 
-shuffled_card_list = new_deck.card_list
+# shuffled_card_list = new_deck.card_list
 
 
-for card in shuffled_card_list:
-    print(card.display_card())
+# for card in shuffled_card_list:
+#     print(card.display_card())
