@@ -1,9 +1,9 @@
 from typing import Self
 from .Card import Card
+from .Player import Player
 from random import randint,randrange,random
 from .Card_list_Protocol import CardList,runtime_checkable
 
-@runtime_checkable
 class Deck(CardList):
     def __init__(self) -> None:
         card_list:list[Card] = []
@@ -33,8 +33,20 @@ class Deck(CardList):
         return len(self.card_list)
     
     def pop_card(self)->Card:
-        top_card = self.__card_list.pop()
+        top_card = self.__card_list.pop(1)
         return top_card
+
+    def deal_all(self,player_list:list[Player])->Self:
+        while len(self.__card_list) > 0:
+            for player in player_list:
+                player.hand.add_card(self.pop_card())
+                if len(self.__card_list) > 0:
+                    break
+        return self
+            
+        
+
+
         
 
     
