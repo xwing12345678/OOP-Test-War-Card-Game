@@ -38,9 +38,21 @@ class Card():
             return '♠'
         else:
             return '♣'
+
+    def get_rank(self)->int|str:
+        if self.__rank == 11:
+                    return 'J'
+        elif self.__rank == '12':
+                    return 'Q'
+        elif self.__rank == '13':
+            return 'K'
+        elif self.__rank == '14':
+            return 'A'      
+        else:
+            return self.__rank
     
     def display_card(self)->str:
-        return f'{self.__rank} {self.get_symbol()} '
+        return f'{self.get_rank()} {self.get_symbol()} '
 
 
     
