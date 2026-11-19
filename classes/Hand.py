@@ -1,16 +1,16 @@
-from .Card_list_Protocol import CardList,Card,runtime_checkable
+from .Card import Card
 from typing import Self
 
-class Hand(CardList):
+class Hand():
     def __init__(self) -> None:
         self.__card_list:list[Card] = []
 
     @property
-    def card_list(self):
+    def card_list(self)->list[Card]:
         return self.__card_list
     
     def cards_left(self)->int:
-        return len(self.card_list)
+        return len(self.__card_list)
     
     def pop_card(self)->Card:
         top_card = self.__card_list.pop(0)

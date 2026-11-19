@@ -1,12 +1,8 @@
 from classes.Card import Card
 from classes.Deck import Deck
+from classes.Player import Player
+from classes.Hand import Hand
+from classes.Game import Game
+from typing import Self
 
-new_deck = Deck()
-
-new_deck.thousand_shuffle()
-
-# shuffled_card_list = new_deck.card_list
-
-
-# for card in shuffled_card_list:
-#     print(card.display_card())
+def main

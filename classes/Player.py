@@ -13,6 +13,9 @@ class Player():
     def hand(self):
         return self.__hand
 
+    def cards_left(self)->int:
+        return len(self.__hand.card_list)
+
     
 
     
