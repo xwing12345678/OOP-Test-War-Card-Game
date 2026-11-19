@@ -1,10 +1,12 @@
 from typing import Self
 from .Card import Card
 from random import randint,randrange,random
+from .Card_list_Protocol import CardList,runtime_checkable
 
-class Deck():
+@runtime_checkable
+class Deck(CardList):
     def __init__(self) -> None:
-        card_list = []
+        card_list:list[Card] = []
         for suit in Card.SUITS:
             for rank in Card.VALID_RANKS:
                 next_card = Card(suit,rank)
@@ -27,6 +29,12 @@ class Deck():
             self.shuffle_deck()
         return self
 
+    def cards_left(self)->int:
+        return len(self.card_list)
+    
+    def pop_card(self)->Card:
+        top_card = self.__card_list.pop()
+        return top_card
         
 
     
